@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import FormInput from '../form-input/form-input-component'
 import CustomButton from '../custom-button/custom-button.components'
 import {auth, createUserProfileDocument} from '../../firebase/firebase.utils'
-import "./sign-up.styles.scss"
-
+import { SignUpContainer, Title } from './sign-up.styles'
 const SignUp = () => {
 
     const [displayName, setDisplayName] = useState("")
@@ -62,10 +61,10 @@ const SignUp = () => {
     }
 
     return (
-        <div className='sign-up'>
-            <h2 className='title'>
+        <SignUpContainer>
+            <Title>
                 I do not have an account.
-            </h2>
+            </Title>
             <span>
                 Sign up with your email and password
             </span>
@@ -112,7 +111,7 @@ const SignUp = () => {
                     SIGN UP
                 </CustomButton>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 

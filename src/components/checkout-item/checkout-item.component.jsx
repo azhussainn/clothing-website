@@ -2,22 +2,27 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.actions'
 
-import './checkout.styles.scss'
-
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    CheckoutItemSpan,
+    QuantityContainer,
+    CheckoutItemRemoveButton
+} from './checkout-item.styles'
 
 const CheckoutItem = ({cartItem, clearItem, addItem, removeItem }) => {
 
     const { name, imageUrl, price, quantity } = cartItem
 
     return(
-    <div className='checkout-item'>
-        <div className='image-container'>
+    <CheckoutItemContainer>
+        <ImageContainer>
             <img alt='item' src={imageUrl} />
-        </div>
-        <span className='name'>
+        </ImageContainer>
+        <CheckoutItemSpan>
             {name}
-        </span>
-        <span className='quantity'>
+        </CheckoutItemSpan>
+        <QuantityContainer>
             <div className='arrow'
                 onClick={() => removeItem(cartItem)}
             >
@@ -31,16 +36,16 @@ const CheckoutItem = ({cartItem, clearItem, addItem, removeItem }) => {
             >
                 &#10095;
             </div>
-        </span>
-        <span className='price'>
+        </QuantityContainer>
+        <CheckoutItemSpan>
             ${price}
-        </span>
-        <div className='remove-button'
+        </CheckoutItemSpan>
+        <CheckoutItemRemoveButton
          onClick = {() => clearItem(cartItem)}
         >
             &#10005;
-        </div>
-    </div>
+        </CheckoutItemRemoveButton>
+    </CheckoutItemContainer>
 )}
 
 const mapDispatchToProps = dispatch => ({
