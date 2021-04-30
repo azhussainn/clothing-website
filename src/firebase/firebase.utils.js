@@ -3,7 +3,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const config = {
-    apiKey: "AIzaSyBpwZ8trT-DTBNYDcRPFfxxYWPMgr4hOkA",
+    apiKey: "",
     authDomain: "clothingwebsite-db.firebaseapp.com",
     projectId: "clothingwebsite-db",
     storageBucket: "clothingwebsite-db.appspot.com",
